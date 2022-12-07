@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+		<title>AHS Sem Exam Calc</title>
+	</head>
+	<body>
+		<header>
+			<h1>Semester Exam Calculator</h1>
+		</header>
+		<main>
+			<div class="container">
+				<h2>Input grades in the box below based on the following:</h2>
+				<ul>
+					<li>1st box: Semester 1 grade</li>
+					<li>2nd box: Semester 2 grade</li>
+					<li>3rd box:
+						<ul>
+							<li>If you're calculating your semester grade with an 'X' on the final, put 'X' here, and click "3rd = Final"</li>
+							<li>If you're calculating the grade necessary to get an 'X' as your final semester grade, put 'X' here and click "3rd = Sem"</li>
+						</ul>
+					</li>
+				</ul>
+
+				<input type="number" id="box1" placeholder="Semester 1">
+				<input type="number" id="box2" placeholder="Semester 2">
+				<input type="number" id="box3" placeholder="3rd Block">
+				<br>
+				<input type="submit" value="3rd=Final" onclick="final()">
+				<input type="submit" value="3rd=Sem" onclick="sem()">
+				<br><br>
+				<h4>Results</h4>
+				<p id="result">e</p>
+			</div>
+		</main>
+		<body><script src="index.js"></script></body>
+		<footer>
+			<p class="footnote"> Made by Warith Rahman via GitHub. Design inspired by <a href="https://www.ekzhang.com" target="_blank" style="color: lightgrey">Eric Zhang</a></p>
+		</footer>
+	</body>
+</html>
