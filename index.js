@@ -1,13 +1,18 @@
+function valid(s) {
+	if (s.length == 0) return false;
+	if (s > 100 || s < 0) return false;
+	if (/^\d+$/.test(s) == false) return false;
+	if (!Number.isInteger(Number(s))) return false;
+
+	return true;
+}
+
 function final() {
 	var q1 = document.getElementById("box1").value;
 	var q2 = document.getElementById("box2").value;
 	var final = document.getElementById("box3").value;
 	
-	if (q1.length==0 || q2.length==0 || final.length==0) return;
-	if (q1 > 100 || q2 > 100 || final > 100) {
-		window.open("https://warithr621.github.io/SemesterExams/oops.html", "_self");
-		return;
-	}
+	if (!valid(q1) || !valid(q2) || !valid(final)) return;
 
 	var res = Math.round(q1 * 0.4 + q2 * 0.4 + final * 0.2);
 	var txt = document.getElementById("result");
@@ -21,13 +26,9 @@ function sem() {
 	var q2 = document.getElementById("box2").value;
 	var goal = document.getElementById("box3").value;
 
-	if (q1.length==0 || q2.length==0 || goal.length==0) return;
-	if (q1 > 100 || q2 > 100 || goal > 100) {
-		window.open("https://warithr621.github.io/SemesterExams/oops.html", "_self");
-		return;
-	}
+	if (!valid(q1) || !valid(q2) || !valid(goal)) return;
 
-	var res = Math.ceil(5 * (goal - q1 * 0.4 - q2 * 0.4));
+	var res = Math.ceil(5 * (goal - 0.4 - q1 * 0.4 - q2 * 0.4));
 	var txt = document.getElementById("result");
 	if (res > 100) {
 		txt.innerHTML = `Sadly, it's impossible for you to achieve this goal grade. Your max possible grade is a ${Math.round(q1*0.4 + q2*0.4 + 20)}.`
